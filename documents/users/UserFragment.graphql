@@ -1,0 +1,10 @@
+fragment User on User {
+  id
+  email
+  email_verified
+  name
+  nickname
+  picture
+  sub
+  updated_at
+}

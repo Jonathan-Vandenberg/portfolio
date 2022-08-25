@@ -1,12 +1,13 @@
 // This import is only needed when checking authentication status directly from getInitialProps
 // import auth0 from '../lib/auth0'
-import { useFetchUser } from '../lib/user'
-import Layout from '../components/layout'
-import { User } from '../interfaces'
+import { useFetchUser } from "../lib/user";
+import Layout from "../components/layout";
+import { User } from "../interfaces";
+import { useUserQuery } from "../types";
 
 type ProfileCardProps = {
-  user: User
-}
+  user: User;
+};
 
 const ProfileCard = ({ user }: ProfileCardProps) => {
   return (
@@ -20,17 +21,17 @@ const ProfileCard = ({ user }: ProfileCardProps) => {
         <p>name: {user.name}</p>
       </div>
     </>
-  )
-}
+  );
+};
 
 const Profile = () => {
-  const { user, loading } = useFetchUser({ required: true })
+  const { user, loading } = useFetchUser({ required: true });
 
   return (
     <Layout user={user} loading={loading}>
       {loading ? <>Loading...</> : <ProfileCard user={user} />}
     </Layout>
-  )
-}
+  );
+};
 
-export default Profile
+export default Profile;

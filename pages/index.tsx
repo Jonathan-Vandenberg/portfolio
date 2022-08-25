@@ -1,8 +1,35 @@
-import Layout from '../components/layout'
-import { useFetchUser } from '../lib/user'
+import { useEffect } from "react";
+import Layout from "../components/layout";
+import { useFetchUser } from "../lib/user";
+import { useAddUserMutation } from "../types";
+import { uuid } from "uuidv4";
 
 const Home = () => {
-  const { user, loading } = useFetchUser()
+  const { user, loading } = useFetchUser();
+
+  console.log(user);
+
+  const [addUserMutation, { data, loading: addUserLoading, error }] =
+    useAddUserMutation();
+
+  useEffect(() => {
+    if (user) {
+      addUserMutation({
+        variables: {
+          input: {
+            id: uuid(),
+            email: user.email,
+            email_verified: user.email_verified,
+            name: user.name,
+            nickname: user.nickname,
+            picture: user.picture,
+            sub: user.sub,
+            updated_at: user.update_at,
+          },
+        },
+      });
+    }
+  }, []);
 
   return (
     <Layout user={user} loading={loading}>
@@ -16,7 +43,7 @@ const Home = () => {
             To test the login click in <i>Login</i>
           </p>
           <p>
-            Once you have logged in you should be able to click in{' '}
+            Once you have logged in you should be able to click in{" "}
             <i>Profile</i> and <i>Logout</i>
           </p>
         </>
@@ -28,10 +55,11 @@ const Home = () => {
           <img src={user.picture} alt="user picture" />
           <p>nickname: {user.nickname}</p>
           <p>name: {user.name}</p>
+          <p>email: {user.email}</p>
         </>
       )}
     </Layout>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
