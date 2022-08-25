@@ -9,7 +9,7 @@ const Header = ({ user, loading }: HeaderProps) => {
   return (
     <header>
       <nav>
-        <ul className="mb-12 flex items-center justify-center space-x-5 shadow-lg">
+        <ul className="flex items-center justify-center space-x-5 shadow-lg">
           <li className="p-5 text-lg font-semibold">
             <Link href="/">
               <a>Home</a>

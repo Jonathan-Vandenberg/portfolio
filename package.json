@@ -9,7 +9,8 @@
     "migrate": "prisma migrate dev",
     "codegen": "graphql-codegen --config codegen.yml",
     "lint": "next lint",
-    "watch": "next build tailwindcss -i ./input.css -o ./dist/output.css --watch"
+    "watch": "next build tailwindcss ./styles/input.css ./dist/output.css",
+    "export": "yarn build && next export"
   },
   "dependencies": {
     "@apollo/client": "^3.6.9",
