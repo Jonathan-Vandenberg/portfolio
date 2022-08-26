@@ -11,12 +11,7 @@ export async function findOrCreateUser(prisma: PrismaClient, input: UserInput) {
       data: { 
         id: input.id,
         email: input?.email,
-        email_verified: input?.email_verified,
         name: input?.name,
-        nickname: input?.nickname,
-        picture: input?.picture,
-        sub: input?.sub,
-        updated_at: input?.updated_at 
       },
     });
   }

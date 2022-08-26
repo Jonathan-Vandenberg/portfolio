@@ -1,10 +1,11 @@
 import NextAuth from "next-auth"
 import GoogleProvider from "next-auth/providers/google";
-import { MongoDBAdapter } from "@next-auth/mongodb-adapter"
-import clientPromise from "../../../lib/mongodb"
+import { PrismaAdapter } from "@next-auth/prisma-adapter"
+import prisma from '../../../lib/prisma'
 
 export default NextAuth({
-  adapter: MongoDBAdapter(clientPromise),
+  secret: process.env.NEXTAUTH_SECRET,
+  adapter: PrismaAdapter(prisma),
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
@@ -18,5 +19,11 @@ export default NextAuth({
       }
     })
   
-  ]
+  ],
+  callbacks: {
+    async session({ session, token, user }) {
+      session.user.id = user.id;
+      return session;
+    },
+  },
 })

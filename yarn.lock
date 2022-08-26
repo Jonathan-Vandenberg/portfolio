@@ -3135,6 +3135,11 @@
     "capital-case" "^1.0.4"
     "tslib" "^2.0.3"
 
+"heroicons@^2.0.7":
+  "integrity" "sha512-BuYwHlgmMIPy1lut5ADTZnsk/FqenSx9f9UxbbABDtTO2GV0Ec/k7VgDs6CCcEnaZ8IDH9mbzyeS/HVpqpxXnQ=="
+  "resolved" "https://registry.npmjs.org/heroicons/-/heroicons-2.0.7.tgz"
+  "version" "2.0.7"
+
 "hey-listen@^1.0.8":
   "integrity" "sha512-COpmrF2NOg4TBWUJ5UVyaCU2A88wEMkUPK4hNqyCkqHbxT92BbvfjoSozkAIIm6XhicGlJHhFdullInrdhwU8Q=="
   "resolved" "https://registry.npmjs.org/hey-listen/-/hey-listen-1.0.8.tgz"
