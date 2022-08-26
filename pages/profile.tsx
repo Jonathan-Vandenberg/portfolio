@@ -3,7 +3,6 @@
 import { useFetchUser } from "../lib/user";
 import Layout from "../components/layout";
 import { User } from "../interfaces";
-import { useUserQuery } from "../types";
 
 type ProfileCardProps = {
   user: User;
