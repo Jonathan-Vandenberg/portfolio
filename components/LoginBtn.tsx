@@ -14,7 +14,9 @@ const AuthBtn = () => {
   if (status === "unauthenticated") {
     return (
       <div className="auth-btn">
-        <button onClick={() => signIn()}>Login</button>
+        <button className="bg-green-200" onClick={() => signIn()}>
+          Login
+        </button>
       </div>
     );
   }
@@ -31,16 +33,9 @@ const AuthBtn = () => {
         <p>Hi, {session.user.name}</p>
       </div>
       <div className="dropdown">
-        <button className="dropdown-btn !py-1">
-          <p>down icon here</p>
+        <button onClick={() => signOut()} className="bg-red-200">
+          Log out
         </button>
-        <ul className="dropdown-list invisible opacity-0">
-          <li className="dropdown-item">
-            <button onClick={() => signOut()} className="cta">
-              Logout
-            </button>
-          </li>
-        </ul>
       </div>
     </div>
   );
