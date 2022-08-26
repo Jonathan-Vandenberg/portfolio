@@ -1,4 +1,5 @@
 import { ApolloProvider } from "@apollo/client";
+import { UserProvider } from "@auth0/nextjs-auth0";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { useClient } from "../lib/client";
@@ -14,9 +15,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="author" content="Jonathan van den Berg" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <ApolloProvider client={client}>
-        <Component {...pageProps} />
-      </ApolloProvider>
+      <UserProvider>
+        <ApolloProvider client={client}>
+          <Component {...pageProps} />
+        </ApolloProvider>
+      </UserProvider>
     </>
   );
 }
