@@ -20,7 +20,7 @@ const Navbar = () => {
         </div>
         <>
           {status === "unauthenticated" ? (
-            <div className="rounded-full border-[1px] border-gray-500 px-4 py-1">
+            <div className="rounded-full border-[1px] border-white px-4 py-1">
               <button className="text-xl text-white" onClick={() => signIn()}>
                 Login
               </button>
