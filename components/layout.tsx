@@ -13,9 +13,6 @@ const Layout = ({ user, loading = false, children }: LayoutProps) => {
       <Head>
         <title>Next.js with Auth0</title>
       </Head>
-
-      <Header user={user} loading={loading} />
-
       <main>
         <div className="container mx-auto flex flex-col items-center justify-center">
           {children}

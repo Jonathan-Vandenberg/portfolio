@@ -4,6 +4,7 @@ import Head from "next/head";
 import { useClient } from "../lib/client";
 import "../styles/input.css";
 import { SessionProvider } from "next-auth/react";
+import Navbar from "../components/Global/Navbar";
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const client = useClient();
@@ -17,6 +18,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
       </Head>
       <SessionProvider session={session}>
         <ApolloProvider client={client}>
+          <Navbar />
           <Component {...pageProps} />
         </ApolloProvider>
       </SessionProvider>

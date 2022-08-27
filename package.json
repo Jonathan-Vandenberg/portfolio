@@ -24,6 +24,11 @@
     "@next-auth/mongodb-adapter": "^1.0.4",
     "@next-auth/prisma-adapter": "^1.0.4",
     "@prisma/client": "^4.2.1",
+    "@react-three/drei": "^9.17.3",
+    "@react-three/fiber": "^8.2.2",
+    "@splinetool/r3f-spline": "^1.0.1",
+    "@splinetool/react-spline": "^2.2.1",
+    "@splinetool/runtime": "^0.9.103",
     "axios": "^0.27.2",
     "framer-motion": "^6.4.3",
     "graphql": "^16.5.0",
@@ -33,6 +38,7 @@
     "next-auth": "^4.10.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "three": "^0.143.0",
     "uuidv4": "^6.2.13"
   },
   "devDependencies": {
